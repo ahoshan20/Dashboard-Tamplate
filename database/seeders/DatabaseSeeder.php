@@ -20,14 +20,6 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             RoleHasPermissionSeeder::class,
             ApplicationSettingSeeder::class,
-            CategorySeeder::class,
-            PublisherSeeder::class,
-            AuthorSeeder::class,
-            RackSeeder::class,
-            MagazineSeeder::class,
-            NewspaperSeeder::class,
-            BookSeeder::class,
-            BookIssuesSeeder::class,
         ]);
     }
 }

@@ -6,9 +6,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\AuthBaseModel;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends AuthBaseModel
 {
+    use HasRoles;
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
@@ -66,8 +68,4 @@ class User extends AuthBaseModel
         ];
     }
 
-    public function book_issues()
-    {
-        return $this->hasMany(BookIssues::class);
-    }
 }

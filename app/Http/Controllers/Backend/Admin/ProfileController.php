@@ -9,7 +9,6 @@ use App\Http\Traits\AuditRelationTraits;
 use App\Models\Admin;
 use App\Services\Admin\AdminManagement\AdminService;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
 
 class ProfileController extends Controller implements HasMiddleware

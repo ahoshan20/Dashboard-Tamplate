@@ -191,19 +191,3 @@ function isImage($path)
     $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
     return in_array($extension, $imageExtensions);
 }
-
-
-function generateBookIssueNumber()
-{
-    $prefix = 'BOOK-' . now()->format('Ymd') . '-';
-
-    // Get latest book for today
-    $latestBook = BookIssues::whereDate('created_at', now()->toDateString())
-        ->latest('id')
-        ->first();
-
-
-
-    $number = $latestBook ? ((int) substr($latestBook->issue_code, -5)) + 1 : 1;
-    return $prefix . str_pad($number, 5, '0', STR_PAD_LEFT);
-}
